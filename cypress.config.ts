@@ -1,7 +1,7 @@
-const { defineConfig } = require("cypress");
+import { defineConfig } from "cypress";
 require('dotenv').config()
 
-module.exports = defineConfig({
+export default defineConfig({
   env: {...process.env},
   e2e: {
     setupNodeEvents(on, config) {
