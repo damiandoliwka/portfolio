@@ -35,5 +35,5 @@ The inclusion of the .env file in this repository serves a specific purpose: to 
 ## Commands
 
 - run tests in Cypress.io: `npx cypress run`
-- run tests in WebdriverIO:
+- run tests in WebdriverIO: `npm run wdio`
 - run tests in Selenium:
