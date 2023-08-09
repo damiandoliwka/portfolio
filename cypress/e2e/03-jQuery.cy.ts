@@ -34,24 +34,26 @@ describe('Download PDF file', () => {
         myJQuery.getDownloadsButton().click()
         myJQuery.getDownloadsButton().realMouseMove(10,0)
         
+        // There is an issue that when file is being downloaded Cypress starts waiting for a new page to load.
+        // It has not been resolved for a few years now, so I have found this piece of code as one of suggested solutions to the problem
         cy.window().then(win => {
             const triggerAutIframeLoad = () => {
-              const AUT_IFRAME_SELECTOR = '.aut-iframe';
+                const AUT_IFRAME_SELECTOR = '.aut-iframe'
         
-              // get the application iframe
-              const autIframe = win.parent.document.querySelector(AUT_IFRAME_SELECTOR);
+                // get the application iframe
+                const autIframe = win.parent.document.querySelector(AUT_IFRAME_SELECTOR)
         
-              if (!autIframe) {
-                throw new ReferenceError(`Failed to get the application frame using the selector '${AUT_IFRAME_SELECTOR}'`);
-              }
+                if (!autIframe) {
+                    throw new ReferenceError(`Failed to get the application frame using the selector '${AUT_IFRAME_SELECTOR}'`)
+                }
         
-              autIframe.dispatchEvent(new Event('load'));
-              // remove the event listener to prevent it from firing the load event before each next unload (basically before each successive test)
-              win.removeEventListener('beforeunload', triggerAutIframeLoad);
-            };
+                autIframe.dispatchEvent(new Event('load'));
+                // remove the event listener to prevent it from firing the load event before each next unload (basically before each successive test)
+                win.removeEventListener('beforeunload', triggerAutIframeLoad)
+            }
         
-            win.addEventListener('beforeunload', triggerAutIframeLoad);
-          });
+            win.addEventListener('beforeunload', triggerAutIframeLoad)
+        })
           
         myJQuery.getPdfButton().realClick()
     })

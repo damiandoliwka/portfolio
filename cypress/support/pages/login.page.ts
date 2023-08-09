@@ -3,11 +3,11 @@ export default class LoginPage {
     url = 'https://the-internet.herokuapp.com/login'
 
     getUsernameInput(){
-        return cy.get('#username');
+        return cy.get('#username')
     }
 
     getPasswordInput(){
-        return cy.get('#password');
+        return cy.get('#password')
     }
 
     getLoginButton() {
