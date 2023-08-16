@@ -1,7 +1,7 @@
 import { $ } from '@wdio/globals'
 import Page from './page.js'
 
-class SecurePage extends Page {
+class SecureAreaPage extends Page {
     get flashAlert() {
         return $('#flash')
     }
@@ -27,4 +27,4 @@ class SecurePage extends Page {
     }
 }
 
-export default new SecurePage()
+export default new SecureAreaPage()

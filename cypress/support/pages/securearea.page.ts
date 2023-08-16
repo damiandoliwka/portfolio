@@ -1,4 +1,4 @@
-export default class SecurePage {
+export default class SecureArea {
 
     url = 'https://the-internet.herokuapp.com/secure'
 
@@ -12,6 +12,10 @@ export default class SecurePage {
 
     getLogoutButton() {
         return cy.get('.button')
+    }
+
+    getFlashAlert() {
+        return cy.get('#flash')
     }
     
     logout() {

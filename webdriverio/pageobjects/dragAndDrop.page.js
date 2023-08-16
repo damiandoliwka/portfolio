@@ -1,6 +1,6 @@
 import Page from './page.js'
 
-class DragAndDrop extends Page {
+class DragAndDropPage extends Page {
 
     get leftHeader() {
         return $('#column-a > header') 
@@ -15,4 +15,4 @@ class DragAndDrop extends Page {
     }
 }
 
-export default new DragAndDrop()
+export default new DragAndDropPage()
