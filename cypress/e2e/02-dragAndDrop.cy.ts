@@ -10,7 +10,7 @@ describe('Should be able to change order of elements by moving left element over
         dragAndDrop.getLeftHeader().should('have.text', 'A')
     })
     it('Drag and drop', () => {
-        dragAndDrop.dragAndDrop('toLeft')
+        dragAndDrop.dragAndDrop('toRight')
     })
     it('Check new order of elements', () => {
         dragAndDrop.getLeftHeader().should('have.text', 'B')
@@ -25,7 +25,7 @@ describe('Should be able to change order of elements by moving right element ove
         dragAndDrop.getRightHeader().should('have.text', 'B')
     })
     it('Drag and drop', () => {
-        dragAndDrop.dragAndDrop('toRight')
+        dragAndDrop.dragAndDrop('toLeft')
     })
     it('Check new order of elements', () => {
         dragAndDrop.getRightHeader().should('have.text', 'A')

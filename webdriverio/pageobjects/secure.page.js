@@ -2,15 +2,15 @@ import { $ } from '@wdio/globals'
 import Page from './page.js'
 
 class SecurePage extends Page {
-    get flashAlert () {
+    get flashAlert() {
         return $('#flash')
     }
 
-    get header () {
+    get header() {
         return $('h2')
     }
 
-    get subheader () {
+    get subheader() {
         return $('.subheader')
     }
 
@@ -20,6 +20,10 @@ class SecurePage extends Page {
 
     async logout() {
         await this.button.click()
+    }
+
+    open() {
+        return super.open('secure')
     }
 }
 

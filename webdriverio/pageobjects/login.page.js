@@ -3,15 +3,15 @@ import Page from './page.js'
 
 class LoginPage extends Page {
 
-    get inputUsername () {
+    get inputUsername() {
         return $('#username')
     }
 
-    get inputPassword () {
+    get inputPassword() {
         return $('#password')
     }
 
-    get btnSubmit () {
+    get btnSubmit() {
         return $('button[type="submit"]')
     }
 
@@ -21,7 +21,7 @@ class LoginPage extends Page {
         await this.btnSubmit.click()
     }
 
-    open () {
+    open() {
         return super.open('login')
     }
 }

@@ -9,6 +9,7 @@
     "cypress": "^12.17.3",
     "cypress-real-events": "^1.10.0",
     "dotenv": "^16.3.1",
+    "html-dnd": "^1.2.1",
     "typescript": "^5.1.6"
   },
   "scripts": {
